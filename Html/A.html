@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arvo', serif;
+            box-sizing: border-box;
+
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            font-family: 'Arvo', serif;
+            background-color: #e3f9ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .calculator {
+            background-color: #3a4452;
+            padding: 20px;
+            font-family: 'Arvo', serif;
+            border-radius: 10px;
+        }
+        .calculator form input {
+            border: 0;
+            font-family: 'Arvo', serif;
+            outline: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+            background: transparent;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        form .cal1 {
+            display: flex;
+            font-family: 'Arvo', serif;
+            justify-content: flex-end;
+            margin: 20px 0;
+        }
+        form .cal1 input {
+            text-align: right;
+            flex: 1;
+            font-family: 'Arvo', serif;
+            font-size: 45px;
+            box-shadow: none;
+        }
+        form input.equal {
+            font-family: 'Arvo', serif;
+            width: 145px;
+            color: rgb(255, 255, 79);
+        }
+        form input.opt {
+            color: rgb(255, 255, 79);
+            font-family: 'Arvo', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form class="cal">
+                <div class="cal1">
+                    <input type="text" name="Display">
+                </div>
+                <div class="cal2">
+                    <input type="button" value="AC" onclick="Display.value = ' ' " class="opt">
+                    <input type="button" value="DE" onclick="Display.value = Display.value.toString().slice(0,-1)" class="opt">
+                    <input type="button" value="." onclick="Display.value += '.' " class="opt">
+                    <input type="button" value="/" onclick="Display.value += '/' " class="opt">
+                </div>
+                <div class="cal2">
+                    <input type="button" value="7" onclick="Display.value += '7' ">
+                    <input type="button" value="8" onclick="Display.value += '8' ">
+                    <input type="button" value="9" onclick="Display.value += '9' ">
+                    <input type="button" value="*" onclick="Display.value += '*' " class="opt">
+                </div>
+                <div class="cal2">
+                    <input type="button" value="4" onclick="Display.value += '4' ">
+                    <input type="button" value="5" onclick="Display.value += '5' ">
+                    <input type="button" value="6" onclick="Display.value += '6' ">
+                    <input type="button" value="-" onclick="Display.value += '-' " class="opt">
+                </div>
+                <div class="cal2">
+                    <input type="button" value="1" onclick="Display.value += '1' ">
+                    <input type="button" value="2" onclick="Display.value += '2' ">
+                    <input type="button" value="3" onclick="Display.value += '3' ">
+                    <input type="button" value="+" onclick="Display.value += '+' " class="opt">
+                </div>
+                <div class="cal2">
+                    <input type="button" value="0" onclick="Display.value += '00' ">
+                    <input type="button" value="00" onclick="Display.value += '0' ">
+                    <input type="button" value="=" onclick="Display.value = eval(Display.value)" class="equal">
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
